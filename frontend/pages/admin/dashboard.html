@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Deliverix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/frontend/styles/style.css">
+
+    <style>body { font-family: 'Plus Jakarta Sans', sans-serif; }</style>
+</head>
+<body class="bg-white flex min-h-screen">
+
+    <aside class="w-72 border-r border-green-50 p-8 hidden lg:flex flex-col gap-10">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-[#16a34a] rounded-xl flex items-center justify-center text-white font-black italic">D</div>
+            <span class="text-2xl font-black text-[#064e3b]">Deliverix</span>
+        </div>
+        <nav class="flex flex-col gap-2">
+            <a href="#" class="flex items-center gap-3 px-4 py-3 bg-green-50 text-[#16a34a] rounded-xl font-bold transition">Tableau de bord</a>
+            <a href="users.html" class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-green-50 hover:text-[#16a34a] rounded-xl font-bold transition">Utilisateurs</a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-green-50 hover:text-[#16a34a] rounded-xl font-bold transition">Paramètres</a>
+        </nav>
+        <div class="mt-auto">
+            <button class="flex items-center gap-3 px-4 py-3 text-red-400 font-bold hover:bg-red-50 w-full rounded-xl transition">Déconnexion</button>
+        </div>
+    </aside>
+
+    <main class="flex-1 p-8 md:p-12 overflow-y-auto">
+        <header class="flex justify-between items-center mb-12">
+            <div>
+                <h1 class="text-4xl font-black text-[#064e3b]">Supervision</h1>
+                <p class="text-slate-400 font-medium">Contrôle global de la plateforme.</p>
+            </div>
+            <div class="flex items-center gap-4 bg-green-50 p-2 rounded-2xl pr-6 border border-green-100">
+                <div class="w-10 h-10 rounded-xl bg-[#16a34a]"></div>
+                <span class="font-bold text-[#064e3b]">Admin_Root</span>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div class="bg-white p-8 rounded-[2.5rem] border border-green-100 shadow-sm">
+                <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Commandes Totales</p>
+                <h3 class="text-3xl font-black text-[#064e3b]">2,456</h3>
+            </div>
+            <div class="bg-white p-8 rounded-[2.5rem] border border-green-100 shadow-sm">
+                <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Livreurs Actifs</p>
+                <h3 class="text-3xl font-black text-[#16a34a]">142</h3>
+            </div>
+            <div class="bg-white p-8 rounded-[2.5rem] border border-green-100 shadow-sm">
+                <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Taux de Réussite</p>
+                <h3 class="text-3xl font-black text-[#22c55e]">98.4%</h3>
+            </div>
+            <div class="bg-white p-8 rounded-[2.5rem] border border-green-100 shadow-sm">
+                <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Revenus (Mo.)</p>
+                <h3 class="text-3xl font-black text-[#064e3b]">12.5k€</h3>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-[2.5rem] border border-green-50 shadow-sm overflow-hidden">
+            <div class="p-8 border-b border-green-50">
+                <h3 class="text-xl font-bold text-[#064e3b]">Dernières Livraisons</h3>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead class="bg-green-50/30 text-slate-400 text-[10px] uppercase font-bold tracking-widest">
+                        <tr>
+                            <th class="px-8 py-4">Client</th>
+                            <th class="px-8 py-4">Livreur</th>
+                            <th class="px-8 py-4">Statut</th>
+                            <th class="px-8 py-4">Montant</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-green-50 text-slate-600 font-semibold">
+                        <tr class="hover:bg-green-50/20 transition">
+                            <td class="px-8 py-5">Alice Martin</td>
+                            <td class="px-8 py-5">Thomas Express</td>
+                            <td class="px-8 py-5">
+                                <span class="px-3 py-1 bg-green-100 text-[#16a34a] rounded-full text-[10px]">Terminée</span>
+                            </td>
+                            <td class="px-8 py-5 font-bold text-[#064e3b]">24.00€</td>
+                        </tr>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

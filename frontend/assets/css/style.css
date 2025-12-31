@@ -1,0 +1,47 @@
+/* Palette de référence basée sur votre image */
+:root {
+    --green-lightest: #f0fdf4;
+    --green-mint: #dcfce7;
+    --green-action: #22c55e;
+    --green-brand: #166534;
+    --green-deep: #064e3b;
+}
+
+body {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Animation d'entrée pour les cartes */
+.order-card {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--green-lightest);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--green-mint);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--green-action);
+}
+
+/* Inputs focus states */
+input:focus, textarea:focus {
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+}

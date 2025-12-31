@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouvelle Commande | Deliverix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/frontend/styles/style.css">
+
+    <style>body { font-family: 'Plus Jakarta Sans', sans-serif; }</style>
+</head>
+<body class="bg-slate-50">
+
+    <header class="bg-white border-b border-green-100 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="orders.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-[#064e3b] rounded-lg flex items-center justify-center text-white font-black italic">D</div>
+                <span class="text-xl font-black text-[#064e3b]">Deliverix</span>
+            </a>
+            <div class="h-10 w-10 rounded-xl bg-green-100 border border-green-200"></div>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto p-6 md:p-12">
+        <div class="bg-white rounded-[2.5rem] shadow-xl p-10 border border-green-50">
+            <h2 class="text-3xl font-black text-[#064e3b] mb-8">Détails de l'envoi</h2>
+            
+            <form class="space-y-8">
+                <div class="space-y-4">
+                    <label class="block text-lg font-bold text-slate-800">Qu'expédiez-vous ?</label>
+                    <textarea rows="3" class="w-full px-6 py-4 rounded-2xl bg-green-50/10 border border-slate-200 focus:border-[#22c55e] outline-none transition-all" placeholder="Ex: Un colis de 5kg, fragile, dimensions 40x40..."></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-slate-400 uppercase ml-2">Lieu de retrait</label>
+                        <input type="text" placeholder="Adresse complète" class="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:border-[#22c55e] outline-none">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-slate-400 uppercase ml-2">Lieu de livraison</label>
+                        <input type="text" placeholder="Adresse complète" class="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:border-[#22c55e] outline-none">
+                    </div>
+                </div>
+
+                <div class="p-6 bg-[#f0fdf4] rounded-[2rem] border border-green-100">
+                    <p class="font-bold text-[#064e3b] mb-4">Options de service</p>
+                    <div class="flex flex-wrap gap-4">
+                        <label class="flex items-center gap-3 bg-white px-5 py-3 rounded-xl border border-green-200 cursor-pointer hover:bg-green-50 transition">
+                            <input type="checkbox" class="w-5 h-5 accent-[#16a34a]">
+                            <span class="font-semibold text-slate-700">Fragile</span>
+                        </label>
+                        <label class="flex items-center gap-3 bg-white px-5 py-3 rounded-xl border border-green-200 cursor-pointer hover:bg-green-50 transition">
+                            <input type="checkbox" class="w-5 h-5 accent-[#16a34a]">
+                            <span class="font-semibold text-slate-700">Express</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 pt-4">
+                    <button type="button" class="flex-1 px-8 py-4 rounded-2xl font-bold text-slate-400 hover:bg-slate-50 transition">Annuler</button>
+                    <button type="submit" class="flex-[2] bg-[#064e3b] text-white px-8 py-4 rounded-2xl font-bold shadow-2xl hover:bg-[#16a34a] transition-all">
+                        Publier ma demande
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Utilisateurs | Deliverix Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/frontend/styles/style.css">
+
+    <style>body { font-family: 'Plus Jakarta Sans', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+    <div class="max-w-6xl mx-auto p-8">
+        <header class="flex justify-between items-end mb-10">
+            <div>
+                <a href="dashboard.html" class="text-sm font-bold text-[#16a34a] hover:underline mb-2 block">← Retour Dashboard</a>
+                <h1 class="text-4xl font-black text-[#064e3b]">Communauté Deliverix</h1>
+            </div>
+            <div class="flex gap-2">
+                <input type="text" placeholder="Rechercher un membre..." class="px-5 py-3 rounded-xl border border-green-100 outline-none focus:ring-2 focus:ring-[#22c55e]/20 text-sm">
+            </div>
+        </header>
+
+        <div class="bg-white rounded-[2.5rem] border border-green-50 shadow-sm overflow-hidden">
+            <table class="w-full text-left">
+                <thead class="bg-green-50/50 text-[#064e3b] text-xs font-black uppercase tracking-widest">
+                    <tr>
+                        <th class="px-8 py-5">Membre</th>
+                        <th class="px-8 py-5">Rôle</th>
+                        <th class="px-8 py-5">Statut</th>
+                        <th class="px-8 py-5 text-right">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-green-50">
+                    <tr class="hover:bg-green-50/20 transition">
+                        <td class="px-8 py-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-green-800 text-white flex items-center justify-center font-bold">AS</div>
+                                <div>
+                                    <p class="font-bold text-slate-900 text-sm italic">Amine Slimani</p>
+                                    <p class="text-xs text-slate-400 italic">amine@deliverix.com</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-8 py-6">
+                            <select class="text-xs font-bold bg-green-50 text-[#16a34a] px-3 py-1.5 rounded-lg border-none outline-none">
+                                <option>Livreur</option>
+                                <option>Client</option>
+                                <option>Admin</option>
+                            </select>
+                        </td>
+                        <td class="px-8 py-6">
+                            <span class="inline-flex items-center gap-1.5 text-green-600 font-bold text-[10px] uppercase">
+                                <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> Actif
+                            </span>
+                        </td>
+                        <td class="px-8 py-6 text-right space-x-3">
+                            <button class="text-xs font-black text-slate-400 hover:text-red-500 uppercase">Désactiver</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
