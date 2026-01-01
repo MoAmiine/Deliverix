@@ -18,8 +18,5 @@
 //     }
 // });
 
-    const btn = document.getElementById('dark-btn');
-    // Au clic, on ajoute ou retire la classe "dark" de la racine du site (html)
-    btn.addEventListener('click', () => {
-        document.getElementById('html').classList.toggle('dark');
-    });
+      const btn = document.getElementById('dark-btn');
+        btn.addEventListener('click', () => { document.documentElement.classList.toggle('dark'); });
