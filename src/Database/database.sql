@@ -34,3 +34,4 @@ CREATE TABLE Notifications(
     utilisateur int ,
     Foreign Key (utilisateur) REFERENCES Utilisateurs(id)
 );
+
