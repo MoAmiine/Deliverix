@@ -6,4 +6,6 @@ class AdministrateurRepository extends Administrateur {
     {
         parent::__construct($nom, $prenom, $id, $email, $password, $role, $commandes);
     }
+
+    
 }

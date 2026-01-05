@@ -7,4 +7,8 @@ class AdministrateurService extends Administrateur{
         parent::__construct($nom, $prenom, $id, $email, $password, $role, $commandes);
     }
     
+    public function gererUtilisateur($utilisateurId, $action) {
+        
+    }
+
 }
