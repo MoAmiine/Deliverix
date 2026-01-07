@@ -30,14 +30,14 @@
             <form class="space-y-8" action="/views/client/create_order.php" method="post">
                 <div class="space-y-4">
                     <label class="block text-lg font-bold text-slate-800">Qu'expédiez-vous ?</label>
-                    <textarea rows="3" class="w-full px-6 py-4 rounded-2xl bg-green-50/10 border border-slate-200 focus:border-[#22c55e] outline-none transition-all" placeholder="Ex: Un colis de 5kg, fragile, dimensions 40x40..."></textarea>
+                    <textarea rows="3" name="description" class="w-full px-6 py-4 rounded-2xl bg-green-50/10 border border-slate-200 focus:border-[#22c55e] outline-none transition-all" placeholder="Ex: Un colis de 5kg, fragile, dimensions 40x40..."></textarea>
                 </div>
 
                 <div class="grid grid-cols-1  gap-6">
                  
                     <div class="space-y-2">
                         <label class="text-xs font-bold text-slate-400 uppercase ml-2">Lieu de livraison</label>
-                        <input type="text" placeholder="Adresse complète" class="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:border-[#22c55e] outline-none">
+                        <input name="adresse" type="text" placeholder="Adresse complète" class="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:border-[#22c55e] outline-none">
                     </div>
                 </div>
 

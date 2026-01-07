@@ -1,6 +1,6 @@
 <?php 
-include __DIR__ . '../Entity/Utilisateur.php';
-include __DIR__ . '../Database/DatabaseConnection.php';
+include __DIR__ . '/../Entity/Utilisateur.php';
+include __DIR__ . '/../Database/DatabaseConnection.php';
 
 class  CommandeRepository extends Commandes{
     
@@ -12,11 +12,11 @@ class  CommandeRepository extends Commandes{
     }
     
     public function insertCommande(){
-        $stmt = $this->conn->prepare('INSERT INTO Commandes (description, etat, date_creation, Adresse)');
+        $stmt = $this->conn->prepare('INSERT INTO Commandes (description, etat, date_creation, Adresse) VALUES(?,?,?,?)');
         $stmt->execute([
             $this->getDescription(),
             $this->getEtat(),
-            $this->getDate(),
+            $this->getDate()->format('Y-m-d H:i:s'),
             $this->getAdresse()
         ]);
     }

@@ -1,7 +1,7 @@
 <?php 
 
 class Commandes{
-    private int $id;
+    private ?int $id;
     private string $description;
     private string $etat;
     private DateTime $date;
