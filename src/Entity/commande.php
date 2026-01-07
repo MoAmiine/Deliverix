@@ -6,13 +6,15 @@ class Commandes{
     private string $etat;
     private DateTime $date;
     private string $adresse;
+    private string $user;
 
-    public function __construct($id, $description, $etat, $date, $adresse){
+    public function __construct($id, $description, $etat, $date, $adresse, $user){
         $this->id = $id;
         $this->description = $description;
         $this->etat = $etat;
         $this->date = $date;
         $this->adresse = $adresse;
+        $this->user = $user;
     }
     
 
@@ -72,6 +74,18 @@ class Commandes{
     public function setAdresse(string $adresse): self
     {
         $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    public function getUser(): string
+    {
+        return $this->user;
+    }
+
+    public function setUser(string $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
