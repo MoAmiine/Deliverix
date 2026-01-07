@@ -41,3 +41,6 @@ VALUES('Teljaoui', 'Mohamed Amine', 'amine@gmail.com', 'amine1234', 'Administrat
 ALTER TABLE Commandes ADD COLUMN Adresse VARCHAR(255);
 
 ALTER TABLE Offres ADD COLUMN Vehicule VARCHAR(100);
+
+ALTER TABLE Commandes ADD COLUMN user_id INT,
+ADD FOREIGN KEY (user_id) REFERENCES Utilisateurs(id);
