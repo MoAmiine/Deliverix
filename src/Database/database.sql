@@ -35,3 +35,5 @@ CREATE TABLE Notifications(
     Foreign Key (utilisateur) REFERENCES Utilisateurs(id)
 );
 
+INSERT INTO Utilisateurs (nom, prenom, email, password, role) 
+VALUES('Teljaoui', 'Mohamed Amine', 'amine@gmail.com', 'amine1234', 'Administrateur');

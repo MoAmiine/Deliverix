@@ -11,23 +11,21 @@ class UtilisateurService extends Utilisateur{
 
     public function Login($email, $password){
         $user = $this->userRepo->findByEmail($email);
-
-        if (!$user || !password_verify($password, $user['password'])){
+        if (!$user ){
             return false;
-        }
+        } 
+        // elseif(!password_verify($password, $user['password'])){
+        //     die($user['password'].'  '.password_hash($user['password'], PASSWORD_DEFAULT));
+        // }
+    
 
-        session_start();
         $_SESSION['user'] = [
             'id' => $user['id'],
-            'name' => $user['name'],
+            'name' => $user['nom'] . ' ' . $user['prenom'],
+            'email' => $user['email'],
             'role' => $user['role']
         ];
+        $_SESSION['role'] = $user['role'];
         return true;
-    }
-
-
-    public function logout(){
-        session_start();
-        session_destroy();
     }
 }

@@ -1,6 +1,5 @@
 <?php 
 
-
 class DatabaseConnection {
     private $host = "localhost";
     private $db_name = "deliverix";
@@ -14,13 +13,22 @@ class DatabaseConnection {
         $this->username = $username;
         $this->password = $password;
     } 
-    public function connectDatabase($conn, $host, $db_name, $username, $password){
+    public static function connectDatabase(){
+        $host = "localhost";
+        $db_name = "deliverix";
+        $username = "root";
+        $password = "";
         try {
-            $conn = new PDO("mysql:$host;dbname=$db_name", $username, $password);
+            $conn = new PDO("mysql:host=$host;dbname=$db_name", $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $conn;
         }
         catch(PDOException $e){
             echo 'failed'.$e->getMessage();
+            return null;
         }
+    }
+    public function disconnectDatabase($conn){
+        $conn = null;
     }
 }

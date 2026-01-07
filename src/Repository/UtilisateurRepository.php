@@ -1,22 +1,24 @@
 <?php 
-include '../Database/DatabaseConnection.php';
+require_once __DIR__ . '/../Entity/Utilisateur.php';
+require_once __DIR__ . '/../Database/DatabaseConnection.php';
 
 class UtilisateurRepository extends Utilisateur{
-    private $pdo;
+    private $conn;
 
-    public function __construct($nom, $prenom, $id, $email, $password, $role, $commandes, PDO $pdo) {
+    public function __construct($nom, $prenom, $id, $email, $password, $role, $commandes,) {
         parent::__construct($nom, $prenom, $id, $email, $password, $role, $commandes);
-        $this->pdo = $pdo;
+        $this->conn = DatabaseConnection::connectDatabase();
     }
 
     public function findByEmail(string $email){ 
-        $stmt = $this->pdo->prepare('SELECT * FROM Utilisateurs WHERE email = ?');
-        $stmt->execute(['email' => $email]);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt = $this->conn->prepare('SELECT * FROM Utilisateurs WHERE email = ?');
+        $stmt->execute([$email]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function create(array $data){
-        $stmt = $this->pdo->prepare("INSERT INTO Utilisateurs (nom, prenom, email, password, role) VALUES (?, ?, ?, ?, ?)");
+    public function Signup(array $data){
+        $data[3] = password_hash($data[3], PASSWORD_DEFAULT);
+        $stmt = $this->conn->prepare("INSERT INTO Utilisateurs (nom, prenom, email, password, role) VALUES (?, ?, ?, ?, ?)");
         return $stmt->execute($data);
     }
 

@@ -1,17 +1,33 @@
 <?php
-include '../Deliverix/src/Service/UtilisateurService.php';
+include __DIR__ . '/../../src/Database/DatabaseConnection.php';
+include __DIR__ . '/../../src/Repository/UtilisateurRepository.php';
+include __DIR__ . '/../../src/Service/UtilisateurService.php';
+session_start();
 
-if ($authService->login($_POST['email'], $_POST['password'])) {
-    $role = $_SESSION['role'];
+$userRepo = new UtilisateurRepository('', '', null, '', '', '', []);
+$authService = new UtilisateurService($userRepo, '', '', null, '', '', '', []);
 
-    if ($role === 'admin') {
-        header('Location: pages/admin/dashboard.php');
-    } 
-    elseif ($role === 'livreur') {
-        header('Location: pages/livreur/my-offers.php');
-    } 
-    else {
-        header('Location: pages/client/orders.php');
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+    if ($authService->Login($_POST['email'], $_POST['password'])) {
+        $role = $_SESSION['user']['role'];
+        if ($role == 'Administrateur') {
+            header('Location: /frontend/pages/admin/dashboard.php');
+            
+        } 
+        echo 'khmh';
+         if ($role === 'Livreur') {
+            header(header: 'Location: /frontend/pages/livreur/my-offers.php');
+            
+        } 
+        else if ($role === 'Client') {
+            header('Location: /frontend/pages/client/orders.php');
+            
+        } else {
+            $error = "Invalid role.";
+
+        }
+    } else {
+
+        $error = "Invalid email or password.";
     }
-    exit(); 
 }

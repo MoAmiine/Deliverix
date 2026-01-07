@@ -1,10 +1,10 @@
 <?php
-include '../Abstract/Person.php';
+include_once __DIR__ . '/../Abstract/Person.php';
 
 class Utilisateur extends Person
 {
 
-    private int $id;
+    private ?int $id;
     private string $email;
     private string $password;
     private string $role;
@@ -20,7 +20,7 @@ class Utilisateur extends Person
         $this->commandes = $commandes;
     }
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -39,7 +39,7 @@ class Utilisateur extends Person
         return $this->role;
     }
 
-    public function setId(int $id): self
+    public function setId(?int $id): self
     {
         $this->id = $id;
 

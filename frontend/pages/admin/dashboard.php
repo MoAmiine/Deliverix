@@ -1,3 +1,15 @@
+<?php
+include_once __DIR__ . '/../../../views/auth/login.php';
+
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'Administrateur') {
+    header('Location: /views/auth/login.php');
+    exit;
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -23,7 +35,7 @@
             <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-green-50 hover:text-[#16a34a] rounded-xl font-bold transition">Paramètres</a>
         </nav>
         <div class="mt-auto">
-            <button class="flex items-center gap-3 px-4 py-3 text-red-400 font-bold hover:bg-red-50 w-full rounded-xl transition">Déconnexion</button>
+            <button href="/views/auth/logout.php" class="flex items-center gap-3 px-4 py-3 text-red-400 font-bold hover:bg-red-50 w-full rounded-xl transition">Déconnexion</button>
         </div>
     </aside>
 
@@ -35,26 +47,26 @@
             </div>
             <div class="flex items-center gap-4 bg-green-50 p-2 rounded-2xl pr-6 border border-green-100">
                 <div class="w-10 h-10 rounded-xl bg-[#16a34a]"></div>
-                <span class="font-bold text-[#064e3b]">Admin_Root</span>
+                <span class="font-bold text-[#064e3b]"><?= $_SESSION['user']['name']; ?></span>
             </div>
         </header>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <div class="bg-white p-8 rounded-[2.5rem] border border-green-100 shadow-sm">
                 <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Commandes Totales</p>
-                <h3 class="text-3xl font-black text-[#064e3b]">2,456</h3>
+                <h3 class="text-3xl font-black text-[#064e3b]">0</h3>
             </div>
             <div class="bg-white p-8 rounded-[2.5rem] border border-green-100 shadow-sm">
                 <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Livreurs Actifs</p>
-                <h3 class="text-3xl font-black text-[#16a34a]">142</h3>
+                <h3 class="text-3xl font-black text-[#16a34a]">0</h3>
             </div>
             <div class="bg-white p-8 rounded-[2.5rem] border border-green-100 shadow-sm">
                 <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Taux de Réussite</p>
-                <h3 class="text-3xl font-black text-[#22c55e]">98.4%</h3>
+                <h3 class="text-3xl font-black text-[#22c55e]">0</h3>
             </div>
             <div class="bg-white p-8 rounded-[2.5rem] border border-green-100 shadow-sm">
                 <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Revenus (Mo.)</p>
-                <h3 class="text-3xl font-black text-[#064e3b]">12.5k€</h3>
+                <h3 class="text-3xl font-black text-[#064e3b]">0</h3>
             </div>
         </div>
 
@@ -74,12 +86,12 @@
                     </thead>
                     <tbody class="divide-y divide-green-50 text-slate-600 font-semibold">
                         <tr class="hover:bg-green-50/20 transition">
-                            <td class="px-8 py-5">Alice Martin</td>
-                            <td class="px-8 py-5">Thomas Express</td>
+                            <td class="px-8 py-5">--</td>
+                            <td class="px-8 py-5">--</td>
                             <td class="px-8 py-5">
-                                <span class="px-3 py-1 bg-green-100 text-[#16a34a] rounded-full text-[10px]">Terminée</span>
+                                <span class="px-3 py-1 bg-green-100 text-[#16a34a] rounded-full text-[10px]">--</span>
                             </td>
-                            <td class="px-8 py-5 font-bold text-[#064e3b]">24.00€</td>
+                            <td class="px-8 py-5 font-bold text-[#064e3b]">0 $</td>
                         </tr>
                         </tbody>
                 </table>
