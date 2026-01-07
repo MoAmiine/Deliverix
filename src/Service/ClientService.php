@@ -6,4 +6,8 @@ class ClientService extends Client{
     {
         parent::__construct($nom, $prenom, $id, $email, $password, $role, $commandes, $notifications, $offres);
     }
+
+    public function createCommande($details){
+        
+    }
 }

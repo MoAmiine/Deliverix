@@ -69,9 +69,9 @@ session_start();
                         </div>
                     </div>
                     <div class="flex gap-2">
-                        <button class="px-6 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm hover:bg-slate-800 transition transform active:scale-95">
+                        <a href="view-offers.php"><button class="px-6 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm hover:bg-slate-800 transition transform active:scale-95">
                             Voir les offres (3)
-                        </button>
+                        </button></a>
                     </div>
                 </div>
             </div>

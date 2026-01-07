@@ -37,3 +37,7 @@ CREATE TABLE Notifications(
 
 INSERT INTO Utilisateurs (nom, prenom, email, password, role) 
 VALUES('Teljaoui', 'Mohamed Amine', 'amine@gmail.com', 'amine1234', 'Administrateur');
+
+ALTER TABLE Commandes ADD COLUMN Adresse VARCHAR(255);
+
+ALTER TABLE Offres ADD COLUMN Vehicule VARCHAR(100);

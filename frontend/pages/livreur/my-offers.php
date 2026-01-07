@@ -22,7 +22,9 @@ session_start();
     <nav class="bg-white/80 backdrop-blur-md border-b border-green-100 sticky top-0 z-50 px-6 py-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-[#16a34a] rounded-lg flex items-center justify-center text-white font-black italic shadow-lg shadow-green-200">D</div>
+<div class="w-12 h-12 border-4 border-[#16a34a] rounded-2xl flex items-center justify-center bg-white shadow-xl shadow-green-100 transform -rotate-3 hover:rotate-0 transition-transform duration-300">
+    <span class="text-[#064e3b] font-extrabold text-2xl tracking-tighter">Dx</span>
+</div>
                 <span class="text-xl font-black text-[#064e3b]">Deliverix <span class="text-xs font-medium text-green-600 ml-1">Pro</span></span>
             </div>
             <div class="flex items-center gap-6">
