@@ -11,4 +11,8 @@ class CommandeService extends Commandes{
         $commandeRepository->insertCommande();
 
     }
+    public function listAllCommandes() {
+        $commandeRepository = new CommandeRepository(null, null, null, null, null, null);
+        return $commandeRepository->getAllCommandes();
+    }
 }

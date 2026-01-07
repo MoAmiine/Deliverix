@@ -2,11 +2,11 @@
 
 class Commandes{
     private ?int $id;
-    private string $description;
-    private string $etat;
-    private DateTime $date;
-    private string $adresse;
-    private string $user;
+    private ?string $description;
+    private ?string $etat;
+    private ?DateTime $date;
+    private ?string $adresse;
+    private ?string $user;
 
     public function __construct($id, $description, $etat, $date, $adresse, $user){
         $this->id = $id;
