@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offres reçues | Deliverix</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/frontend/styles/style.css">
+    <link rel="stylesheet" href="/frontend/styles/style.css">
 
-    <style>body { font-family: 'Plus Jakarta Sans', sans-serif; }</style>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
 </head>
+
 <body class="bg-slate-50">
 
     <main class="max-w-4xl mx-auto p-6 md:p-12">
@@ -30,7 +36,7 @@
                         <p class="text-slate-500 text-sm italic">Vélo électrique • 124 livraisons</p>
                     </div>
                 </div>
-                
+
                 <div class="flex items-center gap-8">
                     <div class="text-right">
                         <p class="text-2xl font-black text-[#064e3b]">12.00 €</p>
@@ -41,8 +47,9 @@
                     </button>
                 </div>
             </div>
-            </div>
+        </div>
     </main>
     <script src="/frontend/assets/js/script.js"></script>
 </body>
+
 </html>

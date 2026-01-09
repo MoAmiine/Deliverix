@@ -15,4 +15,9 @@ class CommandeService extends Commandes{
         $commandeRepository = new CommandeRepository(null, null, null, null, null, null);
         return $commandeRepository->getAllCommandes();
     }
+    public function getCommandesByEtat($etat) {
+        $commandeRepository = new CommandeRepository(null, null, null, null, null, null);
+        return $commandeRepository->getCommandesByEtat($etat);
+    }
+
 }

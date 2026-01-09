@@ -1,4 +1,5 @@
 <?php 
+include_once 'Offer.php';
 
 class Commandes{
     private ?int $id;
@@ -7,14 +8,16 @@ class Commandes{
     private ?DateTime $date;
     private ?string $adresse;
     private ?string $user;
+    private array $offres = [];
 
-    public function __construct($id, $description, $etat, $date, $adresse, $user){
+    public function __construct($id, $description, $etat, $date, $adresse, $user, $offres = []){
         $this->id = $id;
         $this->description = $description;
         $this->etat = $etat;
         $this->date = $date;
         $this->adresse = $adresse;
         $this->user = $user;
+        $this->offres = $offres;
     }
     
 
@@ -86,6 +89,18 @@ class Commandes{
     public function setUser(string $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getOffres(): array
+    {
+        return $this->offres;
+    }
+
+    public function setOffres(array $offres): self
+    {
+        $this->offres = $offres;
 
         return $this;
     }

@@ -1,22 +1,24 @@
 <?php 
 
 class Offre {
-    private int $id;
-    private string $description;
-    private string $duree_estimee;
-    private float $prix;
-    private string $commande;
-    private string $livreur;
+    private ?int $id;
+    private ?string $description;
+    private ?string $duree_estimee;
+    private ?float $prix;
+    private ?string $commande;
+    private ?string $livreur;
+    public $conn;
 
-    public function __construct($id, $description, $duree_estimee, $prix, $commande, $livreur){
+    public function __construct($id, $description, $duree_estimee, $prix, $commande, $livreur,){
         $this->id = $id;
         $this->description = $description;
         $this->duree_estimee = $duree_estimee;
         $this->prix = $prix;
         $this->commande = $commande;
         $this->livreur = $livreur;
+        $this->conn = DatabaseConnection::connectDatabase();
     }
-    
+
 
     public function getId(): int
     {

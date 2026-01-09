@@ -22,9 +22,14 @@ class  CommandeRepository extends Commandes{
         ]);
     }
 
-    public function getAllCommandes(){
+    public function     getAllCommandes(){
         $stmt = $this->conn->prepare('SELECT * FROM Commandes');
         $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function getCommandesByEtat($etat) {
+        $stmt = $this->conn->prepare('SELECT * FROM Commandes WHERE etat = ?');
+        $stmt->execute([$etat]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

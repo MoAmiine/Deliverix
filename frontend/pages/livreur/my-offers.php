@@ -29,6 +29,8 @@ session_start();
             </div>
             <div class="flex items-center gap-6">
                 <a href="my-offers.php" class="text-sm font-bold text-slate-600 hover:text-green-600 transition">Mes Offres</a>
+                <a href="orders.php" class="text-sm font-bold text-slate-600 hover:text-green-600 transition">Commandes Disponibles </a>
+
             <div class="flex items-center gap-6">
                 <span class="font-medium"><strong><?php echo (strtoupper($_SESSION['user']['name'])); ?></strong></span>
                 <a href="/views/auth/logout.php" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-bold transition-all">Déconnexion</a>
@@ -42,7 +44,7 @@ session_start();
             <p class="text-slate-500 font-medium">Consultez les demandes et proposez vos tarifs.</p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
             
             <div class="bg-white rounded-[2.5rem] p-8 border border-green-50 shadow-sm hover:shadow-xl transition-all group">
                 <div class="flex justify-between items-start mb-6">
